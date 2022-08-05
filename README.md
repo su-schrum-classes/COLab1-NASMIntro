@@ -70,7 +70,7 @@ esiBiggest:
 edxBiggest:
     mov eax, edx        ; No need for jmp after this. Already at the end.
 exitMaxOfThree:
-	ret     ; eax now contains maximum of edi, esi, and edx
+    ret     ; eax now contains maximum of edi, esi, and edx
 ```
 Be sure to thoroughly test this function from the C code.
 
