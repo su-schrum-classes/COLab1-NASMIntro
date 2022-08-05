@@ -1,23 +1,16 @@
 ; -----------------------------------------------------------------------------
-; A function that returns the result of multiplying two 32-bit integer
-; arguments. The function has signature:
+; Simple assembly procedure that gets called from the main function
+; in a C program. The function signature is:
 ;
-;   unsigned int multByDoublingAndHalving(unsigned int, unsigned int)
+; int assemblyProcedure(int);
 ;
-; Note that the parameters have already been passed in edi and esi.  We
-; just have to return the value in eax.
-;
-; @author Jacob Schrum, 8/3/2022
+; @author Jacob Schrum, 8/4/2022
 ; -----------------------------------------------------------------------------
 
-	global multByDoublingAndHalving
+	global assemblyProcedure
 	section .text
-multByDoublingAndHalving:
-	mov eax, edi		; Store first parameter in EAX (A)
-	mov ebx, esi		; Store second parameter in EBX (B)
-	mov ecx, 0          ; Store final result here, but initialize C = 0
-
-    ; TODO: Code written by student
-    
-	mov eax, ecx		; Store result C = A*B in return register EAX
-	ret 				; Implicitly returns EAX
+; The int parameter will be in register edi, and the return value comes from eax
+assemblyProcedure:
+	mov eax, edi		; Put edi in eax
+	add eax, 20			; Add 20 to eax
+	ret 				; Implicitly returns eax

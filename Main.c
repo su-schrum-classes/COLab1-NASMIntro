@@ -1,26 +1,21 @@
 /* 
- * This code prints the result of multiplying two integers,
- * then prints the result returned by multByDoublingAndHalving,
- * which you must write. Since multByDoublingAndHalving is applied
- * to the same unsigned integer arguments, the result should be
- * the same.
+ * A simple place for scratch work to learn basic assembly commands.
  * 
  * To execute this code, use:
  * bash run.bash
  * Which simply executes the command:
- * nasm -felf64 P1_TODO.asm && gcc P1_Main.c P1_TODO.o && ./a.out
+ * nasm -felf64 Assembly.asm && gcc Main.c Assembly.o && ./a.out
  *
- * @author Jacob Schrum, 8/3/2022
+ * @author Jacob Schrum, 8/4/2022
  */
 
 #include <stdio.h>
 
-unsigned int multByDoublingAndHalving(unsigned int, unsigned int);
+int assemblyProcedure(int);
 
 int main() {
-	int A = 13;
-	int B = 25;
-
-	printf("%u * %u = %u\n",A,B,A*B);
-	printf("%u * %u = %u\n",A,B,multByDoublingAndHalving(A,B));
+	int result1 = assemblyProcedure(10);
+	int result2 = assemblyProcedure(100);
+	printf("Result 1 = %d\n", result1);
+	printf("Result 2 = %d\n", result2);
 }
