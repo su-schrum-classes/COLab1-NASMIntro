@@ -74,3 +74,20 @@ exitMaxOfThree:
 ```
 Be sure to thoroughly test this function from the C code.
 
+The last assembly example you will be coding adds up the sum of numbers from 1 to some parameter value. Here is the assembly code:
+```
+; One int parameter in edi.
+; Return the sum of the numbers from 1 to edi in eax.
+sum1toN:
+    mov ecx, 1      ; loop counter ecx = 1
+    mov eax, 0      ; accumulator eax = 0
+sumLoopStart:
+    cmp ecx, edi    
+    jg endSumLoop       ; If ecx > edi then return result
+    add eax, ecx        ; Accumulate result: eax += ecx
+    inc ecx             ; increment loop counter: ecx++
+    jmp sumLoopStart    ; Return to loop start to test termination condition
+endSumLoop:
+    ret
+```
+After adding this code to your assembly file, add whatever other code it necessary to call and test the function with various values.
