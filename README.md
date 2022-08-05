@@ -46,3 +46,31 @@ Result: 150
 ```
 The reason is that the code adds its two `int` parameters and returns the result. The two `int` parameters are explicitly passed via the registers `edi` and `esi`. More information on C parameter passing convention is available via links on Moodle.
 
+Now you will define a simple procedure with conditional statements (if-statements). Copy the following code into your assembly program, and then add the other code needed to both the assembly and C files in order to execute the code from the C program. Here is the assembly procedure (note that comments start with a semi-colon `;`):
+```
+; Three int parameters sent via edi, esi, and edx. 
+; Return the maximum of the three parameters in eax.
+maxOfThree:
+    cmp edi, esi
+    jg ediBiggerThanESI ; jump if edi > esi
+esiBiggerThanEDI:       ; technically esi >= edi
+    cmp esi, edx
+    jg esiBiggest       ; jump if esi > edx (already know that esi >= edi)
+    jmp edxBiggest      ; edx >= esi and esi >= edi, so edx is biggest
+ediBiggerThanESI:
+    cmp edi, edx
+    jg ediBiggest       ; jump if edi > edx (already know that edi > esi)
+    jmp edxBiggest      ; edx >= edi and edi > esi, so edx is biggest
+ediBiggest:
+    mov eax, edi
+    jmp exitMaxOfThree  ; Skip remaining code to return result
+esiBiggest:
+    mov eax, esi
+    jmp exitMaxOfThree  ; Skip remaining code to return result
+edxBiggest:
+    mov eax, edx        ; No need for jmp after this. Already at the end.
+exitMaxOfThree:
+	ret     ; eax now contains maximum of edi, esi, and edx
+```
+Be sure to thoroughly test this function from the C code.
+
