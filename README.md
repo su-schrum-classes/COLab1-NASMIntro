@@ -10,7 +10,7 @@ sudo apt-get -y install nasm
 
 # Lab 1: NASM Intro
 
-After installing NASM, execute the code by running the command `bash run.sh`. It should initially output the following:
+After installing NASM, execute the code by running the command `bash run.bash`. It should initially output the following:
 ```
 Result 1 = 30
 Result 2 = 120
