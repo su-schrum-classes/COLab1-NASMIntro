@@ -44,7 +44,7 @@ Running the code at this point will produce this output:
 ```
 Result: 150
 ```
-The reason is that the code adds its two `int` parameters and returns the result. The two `int` parameters are explicitly passed via the registers `edi` and `esi`. More information on C parameter passing convention is available via links on Moodle.
+The reason is that the code adds its two `int` parameters and returns the result. The two `int` parameters are implicitly passed via the registers `edi` and `esi`. More information on C parameter passing convention is available via links on Moodle.
 
 Now you will define a simple procedure with conditional statements (if-statements). Copy the following code into your assembly program, and then add the other code needed to both the assembly and C files in order to execute the code from the C program. Here is the assembly procedure (note that comments start with a semi-colon `;`):
 ```
